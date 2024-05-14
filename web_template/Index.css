@@ -1,11 +1,7 @@
 main{
     width: 100%;
     height: calc(130vh-100px);
-    margin-top: 100px;
-    
-    background-image: url(../img/web\ backgrond.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
+    margin-top: 100px;  
     background-position: center;
     z-index: 100;
 }
@@ -23,48 +19,48 @@ main.main1 h2{
 
 /* the division of screens*/
 
-.Partitions{
+.Units{
     width: 100%;
     height: auto;
     display: flex;
-    column-gap: px;
+    padding-left: 50px;
 }
 
-.part{
-    width: 400px;
-    height: 200px;
-    background:linear-gradient(black,rgba(255, 0, 140, 0.815),black);
-    border-radius: 20px;
+button {
+    width: 325px;
+    height: 250px;
     margin: 50px;
+    border-radius: 20px;
     justify-content: center;
     align-items: center;
-    background-repeat: no repeat;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+    display: block;
+    cursor: pointer;
+    border: 0;
+    background-color: white;
+    box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+    text-transform: uppercase;
+    transition: all 0.5s ease;
+  }
+  
+  button:hover {
+    letter-spacing: 1.5px;
+    background-color: hsl(261deg 80% 48%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
+  }
+  
+ button:active {
+    letter-spacing: 3px;
+    background-color: hsl(261deg 80% 48%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
+    transform: translateY(10px);
+    transition: 100ms;
+  }
 
-
-.part p{
-    color: rgb(139, 122, 10);
+  .part p {
+    color: rgb(34, 145, 117);
     font-size: 40px;
     padding: 60px;
-    text-align: center;
-}
-
-.part:hover{
-    color: black;
-    background: linear-gradient(rgba(205, 69, 144, 0.815),rgb(239, 235, 235),rgba(205, 69, 144, 0.815));
-    border-radius: 40px;
-}
-
-.part:hover:nth-child(1){
-    background-image: url(../img/Half.png);
-}
-.part:hover:nth-child(2){
-    background-image: url(../img/Third.png);
-}
-.part:hover:nth-child(3){
-    background-image: url(../img/for.png);
+    justify-content: center;
 }
