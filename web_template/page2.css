@@ -1,20 +1,20 @@
 body{
     background: fixed;
-    background-color: rgb(10, 10, 10);
+    background-color: rgb(89, 87, 87);
 }
 a{
     cursor: pointer;
     font-size: 20px;
     color: antiquewhite;
     justify-content: center;
-
 }
+
 .header {
     position: fixed;
     top: 0;
     width: 100%;
-    height: 100px;
-    background-color:rgb(0, 0, 0);
+    height: 80px;
+    background-color:rgb(89, 87, 87);
     display: flex;
     justify-content: space-between;
     z-index: 1000;
@@ -28,34 +28,34 @@ a{
 
 .header-nav{
     width: fit-content;
-    height: 100%;
-    
+    height: 100%; 
 }
 
 .header-nav ul{
-    list-style: none;
-    padding-left: 60px;
+    padding-left: 40px;
     position: fixed;
 }
 
 .header-nav ul li{
     display: inline;
-    float: left;
-    margin-right: 20px;
-    
+    float : left;
+    margin:0px 20px;
+    position: relative;
 }
 
 .header-nav ul li a{
-    padding: 0 10px;
+    width: fit-content;
+    height: 80px;
+    text-decoration: none;
+    text-transform: uppercase;
     font-family:'Times New Roman', Times, serif;
-    line-height: 100px;
-    color: rgb(159, 54, 154);
-    display: block;
-    height: 100%;
+    line-height: 80px;
+    color:#000000;
+    
 }
 
 .header-nav ul li a:hover{
-    color: rgb(21, 100, 100);
+    color: #ffffff;
 }
 
 h4{
@@ -89,11 +89,14 @@ h4{
 
 .bar{
     width:100%;
-    max-width: 610px;
+    max-width: 700px;
+    height: 75px;
     background-color: rgb(71, 70, 70);
     display: flex;
     align-items: center;
     border-radius: 30px;
+    z-index: 999;
+    position: fixed;
 }
 
 .bar input{
