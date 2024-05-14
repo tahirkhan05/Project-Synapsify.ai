@@ -1,10 +1,10 @@
 :root{
-    --site-color-01:#e044ec;
-    --site-color-01-hover:#8c2293;
+    --site-color-01:#8697C4;
+    --site-color-01-hover:#ADBBDA;
 }
 
 body{
-  background-color: rgb(162, 57, 170);
+  background-color: var(--site-color-01);
 }
 
 a{
@@ -16,9 +16,9 @@ h1{
     font-weight: 80;
     display: flex;
     text-align:center;
-    justify-content: space-evenly;
+    justify-content: center;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: rgb(88, 15, 137);
+    color: rgb(255, 255, 255);
     text-transform: uppercase;
 }
 
@@ -38,14 +38,14 @@ a{
     font-size: 20px;
     color: antiquewhite;
     justify-content: center;
-
 }
+
 .header {
     position: fixed;
     top: 0;
     width: 100%;
-    height: 100px;
-    background-color:rgb(0, 0, 0);
+    height: 80px;
+    background-color:#8697C4;
     display: flex;
     justify-content: space-between;
     z-index: 1000;
@@ -59,82 +59,32 @@ a{
 
 .header-nav{
     width: fit-content;
-    height: 100%;
-    
+    height: 100%; 
 }
 
 .header-nav ul{
-    list-style: none;
-    padding-left: 60px;
+    padding-left: 40px;
     position: fixed;
 }
 
 .header-nav ul li{
     display: inline;
-    float: left;
-    margin-right: 20px;
-    
+    float : left;
+    margin:0px 20px;
+    position: relative;
 }
 
-.header-nav ul li ul.dropdown li{
-    width: 100%;
-    background: black;
-    position: absolute;
-    z-index: 999;
-    display: none;
-}
-
-.header-nav ul li:hover ul.dropdown{
-    display: block;
-}
 .header-nav ul li a{
-    padding: 0 10px;
+    width: fit-content;
+    height: 80px;
+    text-transform: uppercase;
     font-family:'Times New Roman', Times, serif;
-    line-height: 100px;
-    color: rgb(159, 54, 154);
-    display: block;
-    height: 100%;
+    line-height: 80px;
+    color:#000000;
+    
 }
 
 .header-nav ul li a:hover{
-    color: rgb(21, 100, 100);
-}
-
-
-*
-{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
-
-}
-
-.Partitions{
-    width: 100%;
-    height: auto;
-    display: flex;
-    
-}
-
-.part{
-    width: 400px;
-    height: 200px;
-    background:linear-gradient(black,rgba(255, 0, 140, 0.815),black);
-    border-radius: 20px;
-    margin: 50px;
-    justify-content: center;
-    align-items: center;
-}
-
-.part p {
-        color: rgb(34, 145, 117);
-        font-size: 40px;
-        padding: 60px;
-        justify-content: center;
-}
-.part:hover{
-    background: linear-gradient(rgba(205, 69, 144, 0.815),rgb(239, 235, 235),rgba(205, 69, 144, 0.815));
-    color: rgb(133, 33, 101);
-    border-radius: 40px;
+    color: #ffffff;
 }
 
