@@ -43,19 +43,23 @@ while len(selected_chatbots) < max_selections:
             continue
         
         audience = input(f"{chatbot.capitalize()} audience: ")
-        selected_chatbots.append((chatbot, api_key, audience))
+        selected_chatbots.append((chatbot, api_key, audience, []))  # Adding an empty list for chat history
     else:
         print("Invalid choice. Please select again.")
 
-question = input("You: ")
+while True:
+    question = input("You: ")
+    if question.lower() == 'exit':
+        break
 
-responses = []
+    responses = []
 
-for i, (chatbot, api_key, audience) in enumerate(selected_chatbots):
-    response = chatbot_functions[chatbot](audience, question, api_key)
-    responses.append((chatbot, audience, response))
+    for i, (chatbot, api_key, audience, history) in enumerate(selected_chatbots):
+        response, updated_history = chatbot_functions[chatbot](audience, question, api_key, history)
+        selected_chatbots[i] = (chatbot, api_key, audience, updated_history)
+        responses.append((chatbot, audience, response))
 
-for chatbot, audience, response in responses:
-    print(f"{chatbot.capitalize()} response for audience '{audience}':")
-    print(response)
-    print("\n")
+    for chatbot, audience, response in responses:
+        print(f"{chatbot.capitalize()} response for audience '{audience}':")
+        print(response)
+        print("\n")
