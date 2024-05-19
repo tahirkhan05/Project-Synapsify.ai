@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ai Model Interface</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Ai Model Interface</h1>
+        <form id="chatbot-form" method="post" action="{% url 'get_response' %}">
+            {% csrf_token %}
+            <label for="prompt">Enter Prompt:</label>
+            <input type="text" id="prompt" name="prompt"><br><br>
+            <label for="audience">Enter Audience:</label>
+            <input type="text" id="audience" name="audience"><br><br>
+            <p>Select AI Model:</p>
+            <input type="radio" id="gemini" name="model" value="gemini">
+            <label for="gemini">Gemini</label><br>
+            <input type="radio" id="gpt" name="model" value="gpt">
+            <label for="gpt">GPT</label><br>
+            <input type="radio" id="groq" name="model" value="groq">
+            <label for="groq">Groq</label><br><br>
+            <input type="submit" value="Generate Response">
+        </form>
+        <div class="output-cell">
+            <h2>Output:</h2>
+            <p id="output"></p>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $('#chatbot-form').on('submit', function(event) {
+                event.preventDefault();
+                $.ajax({
+                    url: $(this).attr('action'),
+                    type: $(this).attr('method'),
+                    data: $(this).serialize(),
+                    success: function(response) {
+                        $('#output').text(response.response);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
