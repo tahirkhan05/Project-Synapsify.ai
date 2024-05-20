@@ -21,6 +21,7 @@ chatbot_keys = {
 
 selected_chatbots = []
 max_selections = 4
+default_audience = 'general public'
 
 while len(selected_chatbots) < max_selections:
     print("Select a chatbot (or 'done' to finish selecting):")
@@ -42,7 +43,9 @@ while len(selected_chatbots) < max_selections:
             print(f"API key for {chatbot} instance {instance_number} not found. Check your .env file.")
             continue
         
-        audience = input(f"{chatbot.capitalize()} audience: ")
+        audience = input(f"{chatbot.capitalize()} audience (or press Enter for default '{default_audience}'): ").strip()
+        if not audience:
+            audience = default_audience
         selected_chatbots.append((chatbot, api_key, audience, []))  # Adding an empty list for chat history
     else:
         print("Invalid choice. Please select again.")
