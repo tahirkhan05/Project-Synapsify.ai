@@ -1,5 +1,7 @@
 import os
 from dotenv import load_dotenv
+import time
+import sys
 
 load_dotenv()
 
@@ -64,5 +66,8 @@ while True:
 
     for chatbot, audience, response in responses:
         print(f"{chatbot.capitalize()} response for audience '{audience}':")
-        print(response)
+        for char in response:
+            sys.stdout.write(char)
+            sys.stdout.flush()
+            time.sleep(0.02)  # adjust the delay as needed
         print("\n")
