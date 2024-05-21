@@ -2,7 +2,7 @@ import google.generativeai as genai
 
 def get_gemini_response(audience, question, api_key, history):
     genai.configure(api_key=api_key)
-    model = genai.GenerativeModel('gemini-1.5-pro-latest')
+    model = genai.GenerativeModel('gemini-1.5-flash-latest')
     
     # Convert the history to the required format
     gemini_history = []
