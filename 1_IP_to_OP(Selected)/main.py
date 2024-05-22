@@ -29,8 +29,13 @@ max_selections = 4
 default_audience = 'general public'
 last_selected_chatbot = None
 
-# Select language
-language = input("Select Language: ").strip()
+# Set default language to English
+language = 'English'
+
+# Option to change language
+user_language = input("Select Language (or press Enter to use default 'English'): ").strip()
+if user_language:
+    language = user_language
 
 while len(selected_chatbots) < max_selections:
     print("Select a chatbot (or 'done' to finish selecting):")
