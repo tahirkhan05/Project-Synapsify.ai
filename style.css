@@ -1,0 +1,246 @@
+body {
+  background: #F8F9FA;
+  color: #343A40;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background: #FFFFFF;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.site-name {
+  font-size: 20px;
+  font-weight: bold;
+  color: #007BFF;
+}
+
+/* Add this CSS to your style.css file */
+
+.language-selector {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.language-selector input[type="text"],
+.language-selector select {
+  padding: 5px;
+  margin-right: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.language-selector select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: url('dropdown-arrow.png') no-repeat;
+  background-position: right center;
+  padding-right: 25px; /* Adjust this value to include space for the arrow */
+}
+
+.container {
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+  background: #FFFFFF;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #007BFF;
+  margin-bottom: 20px;
+}
+
+#chat-boxes {
+  display: inline;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+
+.chat-box {
+  background: #FFFFFF;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: inline;
+  vertical-align: top; 
+  flex: 1 1 calc(50% - 20px);
+  min-width: 300px;
+}
+
+
+.input-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.input-group input[type="text"] {
+  padding: 10px;
+  border: 1px solid #6C757D;
+  border-radius: 5px;
+  background: #FFFFFF;
+  color: #343A40;
+  flex-grow: 1;
+}
+
+.radio-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.radio-label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 10px;
+  background-color: #E9ECEF;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.radio-label input[type="radio"] {
+  display: none;
+}
+
+.radio-custom {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  border: 2px solid #6C757D;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.radio-label input[type="radio"]:checked + .radio-custom {
+  border-color: #007BFF;
+  background-color: #007BFF;
+}
+
+.radio-label input[type="radio"]:checked + .radio-custom::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 0.3s ease;
+}
+
+.radio-label input[type="radio"] + .radio-custom::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.3s ease;
+}
+
+.radio-label-text {
+  color: #343A40;
+}
+
+.output-cell {
+  margin-top: 20px;
+}
+
+.output-cell h2 {
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #007BFF;
+}
+
+.output-cell p {
+  background: #E9ECEF;
+  padding: 10px;
+  border-radius: 5px;
+  min-height: 50px;
+}
+
+.controls {
+  margin-top: 20px;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-container input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #6C757D;
+  border-radius: 5px;
+  background: #FFFFFF;
+  color: #343A40;
+}
+
+.button-group {
+  display: flex;
+  gap: 5px;
+}
+
+.button-group button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background: #007BFF;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button-group button:hover {
+  background: #0056b3;
+}
+
+input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #28A745;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background: #218838;
+}
+
+
+
