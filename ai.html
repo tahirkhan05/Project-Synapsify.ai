@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI ChatHub</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="logo-removebg-preview.png" alt="logo" class="logo">
+            <span class="site-name">AI ChatHub</span>
+        </div>
+        <div class="language-selector">
+            <input type="text" id="language-input" placeholder="Language" list="language-presets">
+            <datalist id="language-presets">
+                <option value="English">
+                <option value="Spanish">
+                <option value="French">
+                <!-- Add more presets as needed -->
+            </datalist>
+        </div>
+    
+
+    </header>
+    <div class="container">
+        <h1>AI ChatHub</h1>
+        <div id="chat-boxes" class="chat-boxes">
+            <div class="chat-box">
+                <div class="input-group">Enter Audience:
+                    <input type="text" id="audience-1" placeholder="General Public" name="audience-1">
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" id="gemini-1" name="model-1" value="gemini" checked>
+                            <span class="radio-custom"></span>
+                            <span class="radio-label-text">Gemini-1</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" id="gpt-1" name="model-1" value="gpt">
+                            <span class="radio-custom"></span>
+                            <span class="radio-label-text">GPT</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" id="groq-1" name="model-1" value="groq">
+                            <span class="radio-custom"></span>
+                            <span class="radio-label-text">Groq</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="output-cell">
+                    <h2>Output:</h2>
+                    <p class="output"></p>
+                </div>
+            </div>
+        </div>
+        <form id="chatbot-form" method="post" action="{% url 'get_response' %}">
+            <div class="controls">
+                <div class="search-container">
+                    <input type="text" id="prompt" placeholder="Enter Prompt.." name="prompt">
+                    <div class="button-group">
+                        <button type="button" id="add-box">+</button>
+                        <button type="button" id="remove-box">-</button>
+                        <button type="button" id="refresh-box">&#x21bb;</button>
+                    </div>
+                </div>
+            </div>
+            <input type="submit" value="Generate Response">
+        </form>
+    </div>
+    <script>
+        $(document).ready(function() {
+            let boxCount = 1;
+
+            $('#add-box').click(function() {
+                if (boxCount < 4) {
+                    boxCount++;
+                    $('#chat-boxes').append(
+                        `<div class="chat-box">
+                            <div class="input-group">Enter Audience:
+                                <input type="text" id="audience-${boxCount}" placeholder="General Public ${boxCount}" name="audience-${boxCount}">
+                                <div class="radio-group">
+                                    <label class="radio-label">
+                                        <input type="radio" id="gemini-${boxCount}" name="model-${boxCount}" value="gemini" checked>
+                                        <span class="radio-custom"></span>
+                                        <span class="radio-label-text">Gemini-1</span>
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" id="gpt-${boxCount}" name="model-${boxCount}" value="gpt">
+                                        <span class="radio-custom"></span>
+                                        <span class="radio-label-text">GPT</span>
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" id="groq-${boxCount}" name="model-${boxCount}" value="groq">
+                                        <span class="radio-custom"></span>
+                                        <span class="radio-label-text">Groq</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="output-cell">
+                                <h2>Output:</h2>
+                                <p class="output"></p>
+                            </div>
+                        </div>`
+                    );
+                }
+            });
+
+            $('#remove-box').click(function() {
+                if (boxCount > 1) {
+                    $('#chat-boxes .chat-box:last').remove();
+                    boxCount--;
+                }
+            });
+
+            $('#refresh-box').click(function() {
+                location.reload();
+            });
+
+            $('#chatbot-form').on('submit', function(event) {
+                event.preventDefault();
+                $.ajax({
+                    url: $(this).attr('action'),
+                    type: $(this).attr('method'),
+                    data: $(this).serialize(),
+                    success: function(response) {
+                        $('.output').each(function(index) {
+                            $(this).text(response['response' + (index + 1)]);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
