@@ -32,6 +32,7 @@ header {
 .nav-links {
     display: flex;
     list-style: none;
+    font-size: 18px;
     margin-left: auto;
 }
 
