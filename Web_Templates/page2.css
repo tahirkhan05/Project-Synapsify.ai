@@ -1,0 +1,451 @@
+/* Importing the Roboto font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #0B0C10;
+    color: #FEFFFF;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 80px;
+}
+header {
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+    background: #1f2833;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 50px;
+    margin-right: 15px;
+}
+
+.site-name {
+    font-size: 24px;
+    font-weight: 700;
+    color: #66fcf1;
+    margin-right: 50px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    font-size: 18px;
+    margin-left: auto;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #c5c6c7;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #0b0c10;
+    background-color: #66fcf1;
+}
+
+.language-selector {
+    position: absolute;
+    top: 29px;
+    right: 20px;
+}
+
+.language-selector input[type="text"] {
+    padding: 5px;
+    border: 1px solid #45a29e;
+    border-radius: 3px;
+    background: #1f2833;
+    color: #c5c6c7;
+}
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+    padding: 30px;
+    background: #1f2833;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+#chat-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.chat-box {
+    background: #0b0c10;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    flex: 1 0 400px;
+    margin: 10px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-group input[type="text"] {
+    padding: 12px;
+    border: 1px solid #45a29e;
+    border-radius: 5px;
+    background: #1f2833;
+    color: #c5c6c7;
+    flex-grow: 1;
+}
+
+.radio-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.radio-label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 8px 15px;
+    border-radius: 10px;
+    background-color: #45a29e;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.radio-label input[type="radio"] {
+    display: none;
+}
+
+.radio-custom {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border: 2px solid #45a29e;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.radio-label input[type="radio"]:checked + .radio-custom {
+    border-color: #66fcf1;
+    background-color: #66fcf1;
+}
+
+.radio-label input[type="radio"]:checked + .radio-custom::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    background: #0b0c10;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 0.3s ease;
+}
+
+.radio-label input[type="radio"] + .radio-custom::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    background: #0b0c10;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.3s ease;
+}
+
+.radio-label-text {
+    color: #c5c6c7;
+    font-weight: 500;
+}
+
+.output-cell {
+    margin-top: 20px;
+}
+
+.output-cell p {
+    background: #45a29e;
+    padding: 12px;
+    border-radius: 5px;
+    min-height: 50px;
+    color: #0b0c10;
+    font-weight: 500;
+}
+
+.controls {
+    margin-top: 20px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.search-container input[type="text"] {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #45a29e;
+    border-radius: 5px;
+    background: #1f2833;
+    color: #c5c6c7;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+}
+
+.button-group button {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 5px;
+    background: #45a29e;
+    color: #0b0c10;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 500;
+}
+
+.button-group button:hover {
+    background: #66fcf1;
+}
+
+.submit-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+    align-items: center;
+}
+
+input[type="submit"] {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background: #45a29e;
+    color: #0b0c10;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 500;
+}
+
+input[type="submit"]:hover {
+    background: rgb(2, 91, 2);
+}
+
+#stop-generation {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 5px;
+    background: #45a29e;
+    color: #0b0c10;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 500;
+}
+
+#stop-generation:hover {
+    background: rgb(97, 1, 1);
+}
+
+#voice-input {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 5px;
+    background: #45a29e;
+    color: #0b0c10;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 500;
+}
+
+#voice-input:hover {
+    background: #66fcf1;
+}
+
+.toggle-label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 8px 15px;
+    border-radius: 10px;
+    background-color: #45a29e;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.toggle-label input[type="checkbox"] {
+    display: none;
+}
+
+.toggle-custom {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border: 2px solid #45a29e;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.toggle-label input[type="checkbox"]:checked + .toggle-custom {
+    border-color: #0b0c10;
+    background-color: #0b0c10;
+}
+
+.toggle-label input[type="checkbox"]:checked + .toggle-custom::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    background: #c5c6c7;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 0.3s ease;
+}
+
+.toggle-label input[type="checkbox"] + .toggle-custom::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    background: #0b0c10;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.3s ease;
+}
+
+.toggle-label-text {
+    color: #c5c6c7;
+    font-weight: 500;
+}
+
+/* Custom styles for new input bars */
+.input-bar {
+    margin-top: 10px;
+    display: none;
+}
+
+#overview-output-cell {
+    display: none;
+    margin-top: 20px;
+    background: #0b0c10;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.overview-output-content {
+    color: #c5c6c7;
+    line-height: 1.6;
+}
+
+/* Tooltip Styles */
+.tooltip-container {
+    --background-light: #66fcf1; /* Synapsify's light color */
+    --background-dark: #1f2833;  /* Synapsify's dark color */
+    --text-color-light: #0b0c10; /* Synapsify's background color */
+    --text-color-dark: #66fcf1;  /* Synapsify's light color */
+    --bubble-size: 12px;
+    --glow-color: rgba(102, 252, 241, 0.5); /* Brighter glow color */
+  
+    position: fixed;
+    bottom: 50px; /* Adjusted to account for the footer height */
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--background-dark);
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 14px;
+    padding: 10px 10px;
+    color: var(--text-color-dark);
+    border-radius: 8px;
+    z-index: 1000; /* Ensure it's on top of other elements */
+}
+  
+  .tooltip-container .tooltip {
+    position: absolute;
+    bottom: 100%; /* Initially hidden above the container */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 15px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.3s;
+    border-radius: 8px;
+    background: var(--background-dark);
+    color: var(--text-color-dark);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    width: max-content;
+    max-width: 600px;
+    
+  }
+  
+  .tooltip-container .tooltip::before {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-style: solid;
+    border-width: 8px 8px 0;
+    border-color: var(--background-light) transparent transparent;
+  }
+  
+  .tooltip-container:hover {
+    background: var(--background-dark);
+    color: var(--text-color-dark);
+    box-shadow: 0 0 20px var(--glow-color);
+  }
+  
+  .tooltip-container:hover .tooltip {
+    bottom: 120%; /* Adjusted position for the bubble tooltip */
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  
+  footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #17252A;
+    color: #C6C5C7;
+    padding: 10px 0;
+    text-align: center;
+    z-index: 1000; /* Ensure it's on top of other elements */
+}
+
+footer p {
+    margin: 0;
+}

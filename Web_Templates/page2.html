@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synapsify.ai - Interface</title>
+    <link rel="stylesheet" href="page2.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="logo-removebg-preview.png" alt="logo" class="logo">
+            <span class="site-name">SYNAPSIFY.AI</span>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="home.html#features">Features</a></li>
+                <li><a href="home.html#why-us">Why Us?</a></li>
+            </ul>
+        </nav>
+        <div class="language-selector">
+            <input type="text" id="language-input" placeholder="Language: English" list="language-presets">
+            <datalist id="language-presets">
+                <option value="Hindi">
+                <option value="Telugu">
+                <!-- Add more presets as needed -->
+            </datalist>
+        </div>
+    </header>
+    <div class="container">
+        <div id="chat-boxes" class="chat-boxes">
+            <div class="chat-box">
+                <div class="input-group">
+                    <div class="radio-group">
+                        <label>Select AI Model:</label>
+                        <label class="radio-label">
+                            <input type="radio" id="gemini-1" name="model-1" value="gemini" checked>
+                            <span class="radio-custom"></span>
+                            <span class="radio-label-text">Google</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" id="gpt-1" name="model-1" value="gpt">
+                            <span class="radio-custom"></span>
+                            <span class="radio-label-text">OpenAI</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" id="groq-1" name="model-1" value="groq">
+                            <span class="radio-custom"></span>
+                            <span class="radio-label-text">Meta</span>
+                        </label>
+                    </div>
+                    <div class="button-group">
+                        <button type="button" class="add-input" data-type="audience">Add Audience</button>
+                        <button type="button" class="add-input" data-type="role">Add Role</button>
+                    </div>
+                </div>
+                <div class="output-cell">
+                    <p class="output">Output:</p>
+                </div>
+            </div>
+        </div>
+        <form id="chatbot-form" method="post" action="{% url 'get_response' %}">
+            <div class="controls">
+                <div class="search-container">
+                    <input type="text" id="prompt" placeholder="Enter Prompt.." name="prompt">
+                    <button type="button" id="voice-input">🎤</button>
+                    <div class="button-group">
+                        <button type="button" id="add-box">+</button>
+                        <button type="button" id="remove-box">-</button>
+                        <button type="button" id="refresh-box">&#x21bb;</button>
+                    </div>
+                </div>
+            </div>
+            <div class="submit-group">
+                <input type="submit" value="Generate Response">
+                <label class="toggle-label">
+                    <input type="checkbox" id="overview" name="response-type">
+                    <span class="toggle-custom"></span>
+                    <span class="toggle-label-text">Overview</span>
+                </label>
+                <button type="button" id="stop-generation">Stop Generating</button>
+            </div>
+            <div id="overview-output-cell" class="output-cell"></div>
+        </form>
+    </div>
+    <script src="page2.js"></script>
+    <footer>
+        <div class="tooltip-container">
+            <span class="tooltip">
+                <ul>
+                    <li>Select your preferred language (default:English)</li>
+                    <li>Select your preferred model</li>
+                    <li>(Optional) For each selected model:
+                        <ul>
+                            <li>Enter the intended audience (e.g., coder, artist, child).</li>
+                            <li>Specify a role for the model to assume itself as (e.g., teacher, doctor, advisor).</li>
+                        </ul>
+                    </li>
+                    <li>Choose your preferred way to input your prompt, typing or speaking</li>
+                    <li>(Optional) Summarize responses by clicking the 'Overview' toggle button.</li>
+                    <li>Recommended not to use 'Overview' when assigning a role to the model</li>
+                </ul>
+            </span>
+            <span class="text">Instructions</span>
+        </div>
+        <div class="container2">
+            <p> &copy; 2024 SYNAPSIFY.AI.</p>
+        </div>
+    </footer>
+</body>
+</html>
