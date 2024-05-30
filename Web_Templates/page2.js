@@ -44,14 +44,16 @@ $(document).ready(function() {
     // Add audience and role input bars
     $(document).on('click', '.add-input', function() {
         const type = $(this).data('type');
-        const inputField = `<input type="text" class="input-bar" id="${type}-${chatBoxCount}" placeholder="${type.charAt(0).toUpperCase() + type.slice(1)}" name="${type}-${chatBoxCount}">`;
+        const parentId = $(this).closest('.chat-box').attr('id');
+        const inputField = `<input type="text" class="input-bar" id="${type}-${parentId}" placeholder="${type.charAt(0).toUpperCase() + type.slice(1)}" name="${type}-${parentId}">`;
         $(this).replaceWith(inputField);
-        $(`#${type}-${chatBoxCount}`).fadeIn();
+        $(`#${type}-${parentId}`).fadeIn();
     });
 
     function createChatBox(index) {
+        const boxId = `chat-box-${index}`;
         return `
-            <div class="chat-box">
+            <div class="chat-box" id="${boxId}">
                 <div class="input-group">
                     <div class="radio-group">
                         <label>Select AI Model:</label>
