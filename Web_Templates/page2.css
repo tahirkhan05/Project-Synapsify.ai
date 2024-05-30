@@ -348,9 +348,22 @@ input[type="submit"]:hover {
 }
 
 /* Custom styles for new input bars */
+.input-group-inline {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+}
+
 .input-bar {
+    flex: 1;
+    display: block;
+    padding: 12px;
+    border: 1px solid #45a29e;
+    border-radius: 5px;
+    background: #1f2833;
+    color: #c5c6c7;
     margin-top: 10px;
-    display: none;
 }
 
 #overview-output-cell {
