@@ -1,21 +1,21 @@
-/* Importing the Roboto font from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
 body {
-    font-family: 'Roboto', sans-serif;
-    background: #0B0C10;
-    color: #FEFFFF;
+    font-family: var(--font-family);
+    background: #2E3944;
+    color: var(--text-light);
     margin: 0;
     padding: 0;
-    padding-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 header {
     display: flex;
     align-items: center;
-    padding: 15px 30px;
-    background: #1f2833;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: relative;
+    background: #212A31;
+    padding: 12px;
+    font-family: "Nunito Sans", sans-serif;
 }
 
 .logo-container {
@@ -25,20 +25,17 @@ header {
 
 .logo {
     height: 50px;
-    margin-right: 15px;
+    margin-right: 10px;
 }
 
 .site-name {
     font-size: 24px;
-    font-weight: 700;
     color: #66fcf1;
-    margin-right: 50px;
 }
 
 .nav-links {
     display: flex;
     list-style: none;
-    font-size: 18px;
     margin-left: auto;
 }
 
@@ -47,16 +44,14 @@ header {
 }
 
 .nav-links a {
+    font-family: "Nunito Sans", sans-serif;
     text-decoration: none;
-    color: #c5c6c7;
-    padding: 8px 15px;
-    border-radius: 5px;
-    transition: color 0.3s ease, background-color 0.3s ease;
+    color: #FEFFFF;
+    transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #0b0c10;
-    background-color: #66fcf1;
+    color: #66fcf1;
 }
 
 .language-selector {
@@ -74,10 +69,11 @@ header {
 }
 
 .container {
+    font-family: "Nunito Sans", sans-serif;
     width: 80%;
     margin: 20px auto;
     padding: 30px;
-    background: #1f2833;
+    background: #212a31;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
@@ -89,7 +85,7 @@ header {
 }
 
 .chat-box {
-    background: #0b0c10;
+    background: #2E3944;
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 20px;
@@ -108,7 +104,7 @@ header {
     padding: 12px;
     border: 1px solid #45a29e;
     border-radius: 5px;
-    background: #1f2833;
+    background: #d3d9d4;
     color: #c5c6c7;
     flex-grow: 1;
 }
@@ -126,7 +122,7 @@ header {
     cursor: pointer;
     padding: 8px 15px;
     border-radius: 10px;
-    background-color: #45a29e;
+    background-color: #7eb8b8;
     transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
@@ -139,7 +135,8 @@ header {
     width: 20px;
     height: 20px;
     margin-right: 10px;
-    border: 2px solid #45a29e;
+    
+    border: 2px solid #c5c6c7;
     border-radius: 50%;
     transition: all 0.3s ease;
 }
@@ -176,7 +173,7 @@ header {
 }
 
 .radio-label-text {
-    color: #c5c6c7;
+    color: #0b0c10;
     font-weight: 500;
 }
 
@@ -185,7 +182,7 @@ header {
 }
 
 .output-cell p {
-    background: #45a29e;
+    background: #7eb8b8;
     padding: 12px;
     border-radius: 5px;
     min-height: 50px;
@@ -195,6 +192,7 @@ header {
 
 .controls {
     margin-top: 20px;
+    font-family: "Nunito Sans", sans-serif;
 }
 
 .search-container {
@@ -207,7 +205,7 @@ header {
 .search-container input[type="text"] {
     flex: 1;
     padding: 12px;
-    border: 1px solid #45a29e;
+    border: 1px solid #7eb8b8;
     border-radius: 5px;
     background: #1f2833;
     color: #c5c6c7;
@@ -222,7 +220,7 @@ header {
     padding: 12px 18px;
     border: none;
     border-radius: 5px;
-    background: #45a29e;
+    background: #7eb8b8;
     color: #0b0c10;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -238,6 +236,7 @@ header {
     gap: 15px;
     margin-top: 10px;
     align-items: center;
+    font-family: "Nunito Sans", sans-serif;
 }
 
 input[type="submit"] {
@@ -245,22 +244,24 @@ input[type="submit"] {
     padding: 12px;
     border: none;
     border-radius: 5px;
-    background: #45a29e;
+    background: #7eb8b8;
     color: #0b0c10;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    font-weight: 500;
+    font-weight: 675;
+    font-size: 13px;
+    font-family: "Nunito Sans", sans-serif;
 }
 
 input[type="submit"]:hover {
-    background: rgb(2, 91, 2);
+    background:#66fcf1;
 }
 
 #stop-generation {
     padding: 12px 18px;
     border: none;
     border-radius: 5px;
-    background: #45a29e;
+    background: #7eb8b8;
     color: #0b0c10;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -268,14 +269,14 @@ input[type="submit"]:hover {
 }
 
 #stop-generation:hover {
-    background: rgb(97, 1, 1);
+    background:#66fcf1;
 }
 
 #voice-input {
     padding: 12px 18px;
     border: none;
     border-radius: 5px;
-    background: #45a29e;
+    background: #7eb8b8;
     color: #0b0c10;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -293,8 +294,12 @@ input[type="submit"]:hover {
     cursor: pointer;
     padding: 8px 15px;
     border-radius: 10px;
-    background-color: #45a29e;
+    background-color: #7eb8b8;
     transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.toggle-label-text{
+    color: #0b0c10;
 }
 
 .toggle-label input[type="checkbox"] {
@@ -306,7 +311,8 @@ input[type="submit"]:hover {
     width: 20px;
     height: 20px;
     margin-right: 10px;
-    border: 2px solid #45a29e;
+    background: #7eb8b8;
+    border: 2px solid ;
     border-radius: 50%;
     transition: all 0.3s ease;
 }
@@ -343,7 +349,7 @@ input[type="submit"]:hover {
 }
 
 .toggle-label-text {
-    color: #c5c6c7;
+    color: #0b0c10;
     font-weight: 500;
 }
 
@@ -369,43 +375,80 @@ input[type="submit"]:hover {
 #overview-output-cell {
     display: none;
     margin-top: 20px;
-    background: #0b0c10;
+    background: #2E3944;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    font-family: "Nunito Sans", sans-serif;;
 }
 
 .overview-output-content {
-    color: #c5c6c7;
+    color: #000000;
     line-height: 1.6;
+    font-family: 'Times New Roman', Times, serif;
 }
 
-/* Tooltip Styles */
+/* Define Variables */
+:root {
+    --background-dark: #0B0C10;
+    --background-light: #1f2833;
+    --accent-color: #45a29e;
+    --highlight-color: #66fcf1;
+    --text-light: #c5c6c7;
+    --text-dark: #0b0c10;
+    --font-family: 'Roboto', sans-serif;
+}
+
+/* General Styles */
+
+
+footer {
+    bottom: 0px;
+    background: #212A31;
+    color: #C6C5C7;
+    padding: 10px 0;
+    text-align: center;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    margin-top: auto; /* Push footer to the bottom */
+}
+
+footer p {
+    margin: 0;
+}
+
 .tooltip-container {
+  
+
+
     --background-light: #66fcf1; /* Synapsify's light color */
     --background-dark: #1f2833;  /* Synapsify's dark color */
     --text-color-light: #0b0c10; /* Synapsify's background color */
     --text-color-dark: #66fcf1;  /* Synapsify's light color */
     --bubble-size: 12px;
     --glow-color: rgba(102, 252, 241, 0.5); /* Brighter glow color */
-  
-    position: fixed;
-    bottom: 50px; /* Adjusted to account for the footer height */
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--background-dark);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
     transition: all 0.2s;
     font-size: 14px;
     padding: 10px 10px;
-    color: var(--text-color-dark);
-    border-radius: 8px;
-    z-index: 1000; /* Ensure it's on top of other elements */
+    color: var(--text-light);
+    border-radius: 20px;
+    z-index: 1000;
+    position: relative; /* Ensure proper positioning for the tooltip */
 }
-  
-  .tooltip-container .tooltip {
+
+.tooltip-container .tooltip {
     position: absolute;
-    bottom: 100%; /* Initially hidden above the container */
+    bottom: 100%; /* Position tooltip above the container */
     left: 50%;
     transform: translateX(-50%);
     padding: 10px 15px;
@@ -420,10 +463,9 @@ input[type="submit"]:hover {
     text-align: left;
     width: max-content;
     max-width: 600px;
-    
-  }
-  
-  .tooltip-container .tooltip::before {
+}
+
+.tooltip-container .tooltip::before {
     content: "";
     position: absolute;
     bottom: -8px;
@@ -431,34 +473,22 @@ input[type="submit"]:hover {
     transform: translateX(-50%);
     border-style: solid;
     border-width: 8px 8px 0;
-    border-color: var(--background-light) transparent transparent;
-  }
-  
-  .tooltip-container:hover {
+border-color: var(--background-light) transparent transparent;
+
+}
+
+.tooltip-container:hover {
     background: var(--background-dark);
-    color: var(--text-color-dark);
-    box-shadow: 0 0 20px var(--glow-color);
-  }
-  
-  .tooltip-container:hover .tooltip {
-    bottom: 120%; /* Adjusted position for the bubble tooltip */
+color: var(--text-color-dark);
+box-shadow: 0 0 20px var(--glow-color);
+}
+.tooltip-container:hover .tooltip {
+    bottom: 120%;
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
-  }
-  
-  footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: #17252A;
-    color: #C6C5C7;
-    padding: 10px 0;
-    text-align: center;
-    z-index: 1000; /* Ensure it's on top of other elements */
-}
+} 
 
-footer p {
-    margin: 0;
+.tooltip-container.text{
+ color: black;
 }
