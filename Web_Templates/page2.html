@@ -28,6 +28,8 @@
             <datalist id="language-presets">
                 <option value="Hindi">
                 <option value="Telugu">
+                <option value="German">
+                <option value="Spanish">
                 <!-- Add more presets as needed -->
             </datalist>
         </div>
@@ -37,28 +39,33 @@
             <div class="chat-box">
                 <div class="input-group">
                     <div class="radio-group">
-                        <label>Select AI Model:</label>
+                        <label>Provider:</label>
                         <label class="radio-label">
-                            <input type="radio" id="gemini-1" name="model-1" value="gemini" checked>
+                            <input type="radio" id="gemini" name="model" value="gemini">
                             <span class="radio-custom"></span>
                             <span class="radio-label-text">Google</span>
                         </label>
                         <label class="radio-label">
-                            <input type="radio" id="gpt-1" name="model-1" value="gpt">
+                            <input type="radio" id="gpt" name="model" value="gpt">
                             <span class="radio-custom"></span>
                             <span class="radio-label-text">OpenAI</span>
                         </label>
                         <label class="radio-label">
-                            <input type="radio" id="groq-1" name="model-1" value="groq">
+                            <input type="radio" id="groq" name="model" value="groq">
                             <span class="radio-custom"></span>
                             <span class="radio-label-text">Meta</span>
                         </label>
+                            <div class="model-select">
+                                <select id="model-select" disabled>
+                                    <option value="">Select a model</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="button-group">
+                            <button type="button" class="add-input" data-type="audience">Add Audience</button>
+                            <button type="button" class="add-input" data-type="role">Add Role</button>
+                        </div>
                     </div>
-                    <div class="button-group">
-                        <button type="button" class="add-input" data-type="audience">Add Audience</button>
-                        <button type="button" class="add-input" data-type="role">Add Role</button>
-                    </div>
-                </div>
                 <div class="output-cell">
                     <p class="output">Output:</p>
                 </div>
