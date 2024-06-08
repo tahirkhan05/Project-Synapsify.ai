@@ -82,7 +82,7 @@ function createChatBox(index) {
     $("#overview").change(function() {
         if ($(this).is(":checked")) {
             $("#overview-output-cell").show();
-            $("#overview-output-cell").html('<p>Overview:</p>');
+            $("#overview-output-cell").html('<p></p>');
         } else {
             $("#overview-output-cell").hide();
             $("#overview-output-cell").empty();
