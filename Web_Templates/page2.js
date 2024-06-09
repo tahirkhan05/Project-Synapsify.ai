@@ -4,6 +4,7 @@ $(document).ready(function() {
 
     // Function to create a new chat box
     // Function to create a new chat box
+    // Function to create a new chat box
 function createChatBox(index) {
     const boxId = `chat-box-${index}`;
     return `
@@ -12,7 +13,7 @@ function createChatBox(index) {
                 <div class="radio-group">
                     <label>Provider:</label>
                     <label class="radio-label">
-                        <input type="radio" id="gemini-${index}" name="model-${index}" value="gemini">
+                        <input type="radio" id="gemini-${index}" name="model-${index}" value="gemini" checked> <!-- Added 'checked' attribute here -->
                         <span class="radio-custom"></span>
                         <span class="radio-label-text">Google</span>
                     </label>
@@ -27,10 +28,13 @@ function createChatBox(index) {
                         <span class="radio-label-text">Meta</span>
                     </label>
                     <div class="model-select">
-                    <select id="model-select-${index}" disabled>
-                        <option value="">Select a model</option>
-                    </select>
-                </div>
+                        <select id="model-select-${index}" disabled>
+                            <option value="">Select a model</option>
+                            <option value="gemini-1.0-pro">Gemini 1.0 Pro</option>
+                            <option value="gemini-1.5-flash" selected>Gemini 1.5 Flash</option> <!-- Pre-selecting Gemini 1.5 Flash -->
+                            <option value="gemini-1.5-pro">Gemini 1.5 Pro</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="button-group">
                     <button type="button" class="add-input" data-type="audience">Add Audience</button>
@@ -43,6 +47,7 @@ function createChatBox(index) {
         </div>
     `;
 }
+
 
 
     // Event listener for adding a new chat box
