@@ -41,7 +41,7 @@
                     <div class="radio-group">
                         <label>Provider:</label>
                         <label class="radio-label">
-                            <input type="radio" id="gemini" name="model" value="gemini">
+                            <input type="radio" id="gemini" name="model" value="gemini" checked> <!-- Added 'checked' attribute here -->
                             <span class="radio-custom"></span>
                             <span class="radio-label-text">Google</span>
                         </label>
@@ -55,21 +55,24 @@
                             <span class="radio-custom"></span>
                             <span class="radio-label-text">Meta</span>
                         </label>
-                            <div class="model-select">
-                                <select id="model-select" disabled>
-                                    <option value="">Select a model</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="button-group">
-                            <button type="button" class="add-input" data-type="audience">Add Audience</button>
-                            <button type="button" class="add-input" data-type="role">Add Role</button>
+                        <div class="model-select">
+                            <select id="model-select" disabled>
+                                <option value="">Select a model</option>
+                                <option value="gemini-1.0-pro">Gemini 1.0 Pro</option>
+                                <option value="gemini-1.5-flash" selected>Gemini 1.5 Flash</option> <!-- Pre-selecting Gemini 1.5 Flash -->
+                                <option value="gemini-1.5-pro">Gemini 1.5 Pro</option>
+                            </select>
                         </div>
                     </div>
-                <div class="output-cell">
-                    <p class="output"></p>
+                    <div class="button-group">
+                        <button type="button" class="add-input" data-type="audience">Add Audience</button>
+                        <button type="button" class="add-input" data-type="role">Add Role</button>
+                    </div>
                 </div>
-            </div>
+                <div class="output-cell">
+                    <p class="output">Output:</p>
+                </div>
+            </div>            
         </div>
         <form id="chatbot-form" method="post" action="{% url 'get_response' %}">
             <div class="controls">
